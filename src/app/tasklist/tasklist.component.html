@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Count of Task {{masTask.length}}</h1>
+    <hr>
+    <div class="addBlock">
+        <input type="text" [(ngModel)]="tasksName" maxlength="60">
+        <input type="button" [value]="butName" (click)="addTask(tasksName)">
+    </div>
+    <!-- <app-table [masTask]="masTask" (taskID)="taskID=$event"></app-table> -->
+
+    <div [ngClass]="'task-list'">
+        <table [ngClass]="'task-list-table'">
+            <th>#</th>
+            <th>Task</th>
+            <th>Check</th>
+            <th>DONE/IN PROGRESS</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <tr *ngFor="let mas of masTask;index as i">
+                <td>{{i+1}}</td>
+                <td>{{mas.task}}</td>
+                <td><input type="checkbox" [checked]="mas.check" (click)="chkTask(i)"></td>
+                <td [class.done]="mas.check" [class.prog]="!mas.check">{{mas.progress}}</td>
+                <td><input [ngClass]="['edit']" type="button" value="Edit" id="{{i}}e" (click)="editTask(i)"></td>
+                <td><input [ngClass]="['delete']" type="button" value="Delete" id="{{i}}d" [disabled]="mas.delDis"
+                        (click)="deleteTask(i)"></td>
+            </tr>
+        </table>
+    </div>

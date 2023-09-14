@@ -1,0 +1,55 @@
+@import "../shared/styles/base";
+
+.container {
+    align-items: center;
+    flex-direction: row;
+}
+
+.start {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-element {
+        height: 300px;
+        width: 400px;
+        margin: 20px;
+        border: 1px solid rgb(122, 122, 122);
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        &-img {
+            border-radius: 3px;
+
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &-button {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(208, 209, 209);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & button {
+                width: 13.5vw;
+                height: 30px;
+                padding: 0;
+                border-radius: 3px;
+                border: none;
+                cursor: pointer;
+                background-color: green;
+                color: white;
+            }
+        }
+    }
+}

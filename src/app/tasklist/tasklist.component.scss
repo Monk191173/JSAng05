@@ -1,0 +1,99 @@
+@import "../shared/styles/base";
+
+
+.addBlock {
+    margin-top: 10px;
+}
+
+hr {
+    width: 90vw;
+}
+
+h1 {
+    margin: 0;
+}
+
+input[type="button"] {
+    width: 13.5vw;
+    height: 30px;
+    padding: 0;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+
+input[type="text"] {
+    width: 75vw;
+    height: 25px;
+    margin: 0 10px 10px 0;
+
+    &:focus {
+        outline-color: rgb(10, 168, 168);
+    }
+}
+
+.task-list {
+    width: 90vw;
+    height: 700px;
+    padding-top: 20px;
+    overflow-y: auto;
+
+    &-table {
+        width: 100%;
+        border-collapse: collapse;
+        user-select: none;
+
+        th {
+            border-top: thick double lightgray;
+        }
+
+        th,
+        tr {
+            border-bottom: thick double lightgray;
+            text-align: left;
+        }
+
+        td {
+            padding: 5px 0;
+        }
+
+        input {
+            width: 55px;
+            height: 25px;
+            padding: 0;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+            color: white;
+
+            &.edit {
+                background-color: rgb(255, 188, 0);
+            }
+
+            &.delete {
+                background-color: rgb(234, 70, 67);
+            }
+
+            &:disabled {
+                background-color: rgb(143, 82, 81);
+                cursor: no-drop;
+            }
+        }
+
+        input[type="checkbox"] {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}
+
+
+.done {
+    color: green;
+}
+
+.prog {
+    color: maroon;
+}

@@ -1,0 +1,45 @@
+.workmenu {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgb(122, 122, 122);
+
+    & span {
+        font-weight: bolder;
+    }
+
+    &-main {
+        display: flex;
+
+        & a {
+            display: inline-block;
+            width: 60px;
+            color: blue;
+            text-decoration: none;
+            margin-left: 5px;
+            font-weight: bolder;
+            border: 1px solid white;
+            border-bottom-color: rgb(122, 122, 122);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            bottom: -1px;
+        }
+
+        .activeClass {
+            color: green;
+            background-color: rgb(240, 239, 239);
+            border: 1px solid rgb(122, 122, 122);
+            border-bottom: none;
+        }
+    }
+
+    &-home a {
+        display: block;
+        color: rgb(255, 72, 0);
+        text-decoration: none;
+        font-weight: bolder;
+    }
+}

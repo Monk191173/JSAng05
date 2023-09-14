@@ -1,0 +1,16 @@
+<div class="title">List of prohibited words:</div>
+<div class="container">
+    <div class="listbad">
+        <p>Bad words: </p>
+        <p class="somewords" [innerHTML]="some"></p>
+    </div>
+    <div class="addwords">
+        <input type="text" placeholder="{{ placeholder }}" [(ngModel)]="word">
+        <button type="button" (click)="addClick()" id="add">Add</button>
+        <button type="button" (click)="resetClick()" id="reset">Reset</button>
+    </div>
+    <div class="inputtext">
+        <textarea id="text" cols="30" rows="10" placeholder="{{ placeholderAr }}" [(ngModel)]="text"></textarea>
+        <button type="button" (click)="censorClick()" id="censor">Censor</button>
+    </div>
+</div>

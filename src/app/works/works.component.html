@@ -1,0 +1,12 @@
+<div class="workmenu">
+    <div class="workmenu-main">
+        <span>Last works >>> </span>
+        <a [routerLink]="['badwords']" routerLinkActive="activeClass">Cenzor</a>
+        <a [routerLink]="['userlist']" routerLinkActive="activeClass">Users</a>
+        <a [routerLink]="['tasklist']" routerLinkActive="activeClass">Task</a>
+    </div>
+    <div class="workmenu-home">
+        <a [routerLink]="['/home']"> Back to >>> Home</a>
+    </div>
+</div>
+<router-outlet></router-outlet>

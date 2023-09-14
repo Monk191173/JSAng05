@@ -1,0 +1,53 @@
+<div class="container">
+  <form action="" autocomplete="off" name="sign-form">
+    <h1>Please enter user data</h1>
+
+    <label for="first">Login</label>
+    <div class="first-name" [ngClass]="loginStyle">
+      <span>Enter login</span>
+      <input [ngClass]="['bas-input','first']" type="text" name="first" placeholder="Enter login" [(ngModel)]="fvalue"
+        id="first" [style.outlineColor]="fOutColor" [maxLength]="maxLength" #fInput (focus)="nameFocus()"
+        (input)="nameInput()" required>
+    </div>
+
+    <label for="password">Password</label>
+    <div class="password" [ngClass]="pasStyle">
+      <span>Enter password</span>
+      <input [ngClass]="['bas-input','password-input']" type="password" name="password" placeholder="Enter password"
+        [(ngModel)]="pVal" id="password" [style.outlineColor]="pOutColor" [maxLength]="maxLengthP" #pInput
+        (focus)="pasFocus()" (input)="pasInput()" required>
+    </div>
+
+    <label for="email">Email</label>
+    <div class="email" [ngClass]="mailStyle">
+      <span>Enter email</span>
+      <input [ngClass]="['bas-input','email-input']" type="email" name="email" placeholder="Enter email"
+        [(ngModel)]="eVal" id="email" [style.outlineColor]="eOutColor" [maxLength]="maxLengthE" #eInput
+        (focus)="mailFocus()" (input)="mailInput()" required>
+    </div>
+
+    <button type="button" value="" id="submit" [disabled]="addEnabled" [ngStyle]="{cursor}" #subBut
+      (click)="clickSub()">Add
+      user</button>
+  </form>
+
+
+  <div [ngClass]="'user-list'">
+    <table [ngClass]="'user-list-table'">
+      <th>#</th>
+      <th>Login</th>
+      <th>Password</th>
+      <th>Email</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <tr *ngFor="let mas of masUsers;index as i">
+        <td>{{i+1}}</td>
+        <td>{{mas.login}}</td>
+        <td>{{mas.password}}</td>
+        <td>{{mas.email}}</td>
+        <td><input [ngClass]="['edit']" type="button" value="Edit" id="{{i}}e" (click)="editUser(i)"></td>
+        <td><input [ngClass]="['delete']" type="button" value="Delete" id="{{i}}d" (click)="deleteUser(i)"></td>
+      </tr>
+    </table>
+  </div>
+</div>
